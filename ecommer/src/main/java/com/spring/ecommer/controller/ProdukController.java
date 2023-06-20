@@ -3,12 +3,14 @@ package com.spring.ecommer.controller;
 import com.spring.ecommer.entity.Produk;
 import com.spring.ecommer.service.ProdukService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@PreAuthorize("isAuthenticated()")
 public class ProdukController {
     @Autowired
     private ProdukService produkService;
