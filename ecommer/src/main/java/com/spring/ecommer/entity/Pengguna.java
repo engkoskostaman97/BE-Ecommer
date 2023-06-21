@@ -7,9 +7,15 @@ import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Data
+@NoArgsConstructor
 public class Pengguna  implements Serializable{
+    public Pengguna(String username) {
+        this.id = username;
+    }
     @Id
     private String id;
     @JsonIgnore
@@ -21,5 +27,6 @@ public class Pengguna  implements Serializable{
     private String roles;
     private Boolean isAktif;
 
-    
+
+
 }

@@ -10,14 +10,17 @@ public class JwtResponse implements Serializable {
     private String type = "Bearer";
     private String username;
     private String email;
+    private String roles;
 
     public JwtResponse(
             String accessToken,
             String username,
-            String email) {
+            String email,
+            String roles) {
         this.username = username;
         this.email = email;
         this.token = accessToken;
+        this.roles= roles;
     }
 
 }
